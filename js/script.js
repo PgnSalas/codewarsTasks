@@ -138,14 +138,14 @@ function duplicateEncode(word) {
         }
     }
 
-    // console.log(arrRepeatLetter);
-
     let str = '';
     for (let i = 0; i < arrRepeatLetter.length; i++) {
-        for (let j = 0; j < arr.length; j++) {
-            if (arrRepeatLetter[j] == arr[i]) {
+        gad:for (let j = 0; j < arr.length; j++) {
+            if (arrRepeatLetter[i] == arr[j]) {
                 console.log(arr[i]);
+                continue gad;
             }
+            continue gad;
         }
     }
 
@@ -154,3 +154,27 @@ function duplicateEncode(word) {
 
 duplicateEncode('recede');
 duplicateEncode('Success');
+
+
+/* 
+    THE TASK 6
+    Digital root is the recursive sum of all the digits in a number.
+    Given n, take the sum of the digits of n. If that value has more than one digit, continue reducing in this way until a single-digit number is produced. The input will be a non-negative integer.
+*/
+
+function digitalRoot(n) {
+    let newNum = 0;
+    let str = '';
+    str += n;
+    if (n < 10) {
+        console.log(n);
+    } else {
+        for(let i = 0; i < str.length; i++) {
+            newNum += +str[i];
+        };
+        n = newNum;
+        return digitalRoot(n);
+    }
+}
+
+digitalRoot(7);
