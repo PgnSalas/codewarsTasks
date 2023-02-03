@@ -178,3 +178,29 @@ function digitalRoot(n) {
 }
 
 digitalRoot(7);
+
+
+/* 
+    THE TASK 7
+     An isogram is a word that has no repeating letters, consecutive or non-consecutive. Implement a function that determines whether a string that contains only letters is an isogram. Assume the empty string is an isogram. Ignore letter case.
+*/
+
+function isIsogram(str) {
+    let arr = [];
+    let newStr = str.split('');
+    for(let i = 0; i < newStr.length; i++) {
+        for(let j = i + 1; j < newStr.length; j++) {
+            if (newStr[i].toLowerCase() == newStr[j].toLowerCase()) {
+                arr.push(newStr[i]);
+            }
+        }
+    }
+
+    if (arr.length > 0) {
+        return false;
+    } else {
+        return true;
+    }
+}
+
+isIsogram('moOse');
