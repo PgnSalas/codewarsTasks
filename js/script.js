@@ -194,7 +194,7 @@ function isIsogram(str) {
                 arr.push(newStr[i]);
             }
         }
-    }
+    }и
 
     if (arr.length > 0) {
         return false;
@@ -204,3 +204,64 @@ function isIsogram(str) {
 }
 
 isIsogram('moOse');
+
+
+
+
+
+// ===============================================================VADIM========================================================
+const funds = [
+    { amount: -1400 },
+    { amount: 2400 },
+    { amount: -1000 },
+    { amount: 500 },
+    { amount: 10400 },
+    { amount: -11400 },
+];
+  
+const getPositiveIncomeAmount = (data) => {
+    let num = 0;
+    data.forEach(item => item.amount > 0 ? num += item.amount : null);
+    console.log(num);
+};
+  
+const getTotalIncomeAmount = (data) => {
+    let condition;
+    data.forEach((item, index) => item.amount < 0 ? condition = true : null);
+    condition ? console.log(data.reduce((acc, items) => acc + items.amount, 0)) : getPositiveIncomeAmount(data);
+};
+
+getTotalIncomeAmount(funds);
+
+
+//   2) Напишите функцию getTotalIncomeAmount, которая тоже принимает этот массив данных. Если хотя бы один из объектов содержит отрицательное значение поля amount, то функция возвращает сумму всех значений. (число) Если таких значений нет - запускается функция getPositiveIncomeAmount с тем же массивом данных.
+
+// Пример:
+
+// getTotalIncomeAmount(funds) => -500
+
+
+
+/* 
+    THE TASK 8
+    ATM machines allow 4 or 6 digit PIN codes and PIN codes cannot contain anything but exactly 4 digits or exactly 6 digits.
+    If the function is passed a valid PIN string, return true, else return false.
+*/
+
+function validatePIN (pin) {
+    let final = (pin.length == 4 || pin.length == 6) && /^[0-9]+$/ig.test(pin) ? true : false;
+    console.log(final);
+}
+
+validatePIN('fg');
+
+
+
+// 1) - make a triangular
+let ne = '';
+for(let i = 0; i <= 7; i++) {
+    for(let j = i + 1; j <= i + 1; j++) {
+        ne += "#";
+        console.log(ne);
+    }
+} 
