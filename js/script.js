@@ -265,3 +265,17 @@ for(let i = 0; i <= 7; i++) {
         console.log(ne);
     }
 } 
+
+
+
+/* 
+    THE TASK 9
+    To be a senior, a member must be at least 55 years old and have a handicap greater than 7. In this croquet club, handicaps range from -2 to +26; the better the player the lower the handicap.
+*/
+
+function openOrSenior(data) {
+    let arr = data.map((item, index) => item[0] >= 55 && item[1] > 7 ? "Senior" : "Open");
+    console.log(arr);
+}
+
+openOrSenior([[18, 20], [45, 2], [61, 12], [37, 6], [21, 21], [78, 9]]);
